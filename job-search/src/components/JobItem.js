@@ -36,3 +36,5 @@ const JobItem = (props) => {
 }
 
 export default JobItem
+
+// This component displays the data coming from the API.
