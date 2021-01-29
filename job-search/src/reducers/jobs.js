@@ -10,3 +10,5 @@ const jobsReducer = (state = [], action) => {
 }
 
 export default jobsReducer
+
+// This file adds the new jobs data coming from the API in redux using the SET_JOBS action. By using the LOAD_MORE_JOBS action, this will get more jobs and add them to the existing array using the spread operator
