@@ -12,3 +12,5 @@ const Results = ({ results }) => {
 }
 
 export default Results
+
+// This component loops through each job object from the results array and passes the individual job data to display in the JobItem component
