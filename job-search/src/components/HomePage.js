@@ -7,11 +7,13 @@ import Header from './Header';
 import Search from './Search';
 import Results from './Results';
 
+// 
 const HomePage = (props) => {
   const [results, setResults] = useState([]);
   const [errors, setErrors] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+//   Hooks to get the list of jobs and error, if there is one
   useEffect(() => {
     setResults(props.jobs);
   }, [props.jobs]);
