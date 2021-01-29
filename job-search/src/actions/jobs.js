@@ -41,3 +41,5 @@ export const setLoadMoreJobs = (jobs) => ({
     type: 'LOAD_MORE_JOBS',
     jobs
 })
+
+// This action adds in initiateGetJobs function which retrieves the JSON data my making an API call to the Express server in Node.js. Once the data is received, SET_JOBS is displaced which will add the jobs data into the redux store by executing the SET_JOBS switch from reducers/jobs.js
