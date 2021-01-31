@@ -6,14 +6,15 @@ import { resetErrors } from '../actions/errors';
 import Header from './Header';
 import Search from './Search';
 import Results from './Results';
+import JobDetails from './JobDetails';
 
-// 
 const HomePage = (props) => {
   const [results, setResults] = useState([]);
   const [errors, setErrors] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [jobId, setJobId] = useState(-1);
+  const [page, setPage] = useState('home');
 
-//   Hooks to get the list of jobs and error, if there is one
   useEffect(() => {
     setResults(props.jobs);
   }, [props.jobs]);
@@ -38,17 +39,36 @@ const HomePage = (props) => {
     loadJobs(selection);
   };
 
+  const handleItemClick = (jobId) => {
+    setPage('details');
+    setJobId(jobId);
+  };
+
+  const handleResetPage = () => {
+    setPage('home');
+  };
+
+  let jobDetails = {};
+  if (page === 'details') {
+    jobDetails = results.find((job) => job.id === jobId);
+  }
   return (
     <div>
-      <Header />
-      <Search onSearch={handleSearch} />
-      {!_.isEmpty(errors) && (
-        <div className="errorMsg">
-          <p>{errors.error}</p>
+      <div className={`${page === 'details' && 'hide'}`}>
+        <Header /> <Search onSearch={handleSearch} />
+        {!_.isEmpty(errors) && (
+          <div className="errorMsg">
+            <p>{errors.error}</p>
+          </div>
+        )}
+        {isLoading && <p className="loading">Loading...</p>}
+        <div>
+          <Results results={results} onItemClick={handleItemClick} />
         </div>
-      )}
-      <Results results={results} />
-      {isLoading && <p className="loading">Loading...</p>}
+      </div>
+      <div className={`${page === 'home' && 'hide'}`}>
+        <JobDetails details={jobDetails} onResetPage={handleResetPage} />
+      </div>
     </div>
   );
 };
