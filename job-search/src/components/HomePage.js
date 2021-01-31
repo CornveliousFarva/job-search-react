@@ -7,6 +7,7 @@ import Header from './Header';
 import Search from './Search';
 import Results from './Results';
 import JobDetails from './JobDetails';
+import JobsContext from '../context/jobs';
 
 const HomePage = (props) => {
   const [results, setResults] = useState([]);
