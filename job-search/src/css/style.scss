@@ -33,37 +33,38 @@ ol {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
+}
 
-  .title {
+.title {
     font-weight: 600;
     font-size: 3rem;
     color: $default-color;
-  }
 }
 
 .search-section {
   width: 70%;
   margin: 20px auto;
+}
 
-  input {
-    padding: $default-padding;
-    font-size: 1.5rem;
-  }
+input {
+  padding: $default-padding;
+  font-size: 1.5rem;
+}
 
-  .btn-search {
+.btn-search {
     font-size: 2.2rem;
     letter-spacing: 1px;
     width: 13rem;
     line-height: 1.5;
     color: $default-color;
     border: none;
-  }
 }
+
 
 .filters {
   display: flex;
   width: 70%;
-
+}
   .filter-btn {
     margin: 2rem;
     margin-left: 0;
@@ -85,11 +86,11 @@ ol {
       margin-left: 1rem;
     }
   }
-}
 
 .search-results {
   width: 90%;
   margin: 0 auto;
+}
 
   .job-item {
     display: flex;
@@ -131,12 +132,12 @@ ol {
       align-items: center;
     }
   }
-}
 
 .load-more {
   display: flex;
   justify-content: center;
   margin-bottom: 5rem;
+}
 
   button {
     border: none;
@@ -147,7 +148,7 @@ ol {
     letter-spacing: 1px;
     outline: none;
   }
-}
+
 
 .job-details {
   width: 90%;
@@ -230,16 +231,17 @@ ol {
   bottom: 0;
   z-index: 99999;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
 
-  .message {
+.message {
     position: relative;
     font-size: 20px;
     top: 50%;
     left: 50%;
     transform: translateX(-10%);
     color: $default-color;
-  }
 }
+
 
 .loader-open {
   overflow: hidden;
